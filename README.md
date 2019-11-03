@@ -26,6 +26,6 @@ generatr.
 
 [generatr-gradle]: https://github.com/hauner/openapi-generatr-gradle
 [generatr-spring]: https://github.com/hauner/openapi-generatr-spring
-[generatr-spring-api-impl]: https://github.com/hauner/openapi-generatr-gradle/tree/master/src/groovy/com/github/hauner/openapi/spring/generatr/SpringGeneratr.groovy
-[generatr-spring-api-props]: https://github.com/hauner/openapi-generatr-gradle/tree/master/src/main/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
+[generatr-spring-api-impl]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/generatr/SpringGeneratr.groovy
+[generatr-spring-api-props]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
 [generatr-api]: https://github.com/hauner/openapi-generatr-api/tree/master/src/main/java/com/github/hauner/openapi/api/OpenApiGeneratr.java
