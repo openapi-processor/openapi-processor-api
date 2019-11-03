@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'com.jfrog.bintray' version '1.8.4'
+    id 'maven-publish'
+}
+
+group 'com.github.hauner.openapi'
+version '1.0.BETA'
+
+sourceCompatibility = 1.8
+
+ext {
+    bintrayUser = BINTRAY_USER ?: 'n/a'
+    bintrayKey = BINTRAY_KEY ?: 'n/a'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    archiveClassifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+bintray {
+    user = bintrayUser
+    key = bintrayKey
+    publications = ['GeneratrSpring']
+
+    pkg {
+        repo = 'openapi-generatr'
+        name = 'openapi-generatr-api'
+        //userOrg = 'openapi-generatr'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/hauner/openapi-generatr-api'
+
+        version {
+            name = project.version
+        }
+    }
+}
+
+publishing {
+    publications {
+        GeneratrSpring (MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+
+            groupId project.group
+            artifactId project.name
+            version project.version
+        }
+    }
+}
