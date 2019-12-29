@@ -29,7 +29,7 @@ import java.util.Map;
  *
  * <p>
  * For example the gradle plugin will provide a gradle task for each (configured) generatr. This task
- * will find & run a generatr by using this service interface. By using the service interface it does
+ * will find and run a generatr by using this service interface. By using the service interface it does
  * not need an explicit dependency on a generatr.
  *
  * @author Martin Hauner
