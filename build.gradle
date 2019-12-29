@@ -11,8 +11,8 @@ version '1.0.0.B2'
 sourceCompatibility = 1.8
 
 ext {
-    bintrayUser = System.getenv ('BINTRAY_USER') ? BINTRAY_USER : 'n/a'
-    bintrayKey  = System.getenv ('BINTRAY_KEY')  ? BINTRAY_KEY  : 'n/a'
+    bintrayUser = project.hasProperty ('BINTRAY_USER') ? BINTRAY_USER : 'n/a'
+    bintrayKey =  project.hasProperty ('BINTRAY_KEY')  ? BINTRAY_KEY  : 'n/a'
 }
 
 repositories {
