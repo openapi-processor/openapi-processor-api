@@ -16,6 +16,8 @@
 
 package com.github.hauner.openapi.api;
 
+import java.util.Map;
+
 /**
  * To make an openapi-generatr available to a consumer (for example the openapi-generatr-gradle plugin)
  * it must implement this interface and have a
@@ -26,15 +28,13 @@ package com.github.hauner.openapi.api;
  * A consumer should be able to provide access to any generatr that is found on the class path.
  *
  * <p>
- * For example the gradle plugin will provide a gradle task and options object for each generatr that
- * is available via this service interface. For
- * <a href="https://github.com/hauner/openapi-generatr-spring">openapi-generatr-spring</a> (based
- * on the generatr name) this will be a {@code generateSpring} task to run the generatr and a
- * {@code generatrSpring} options object to configure it.
+ * For example the gradle plugin will provide a gradle task for each (configured) generatr. This task
+ * will find & run a generatr by using this service interface. By using the service interface it does
+ * not need an explicit dependency on a generatr.
  *
  * @author Martin Hauner
  */
-public interface OpenApiGeneratr<T> {
+public interface OpenApiGeneratr {
 
     /**
      * The identifying name of the generatr. *Should* be globally unique so a consumer of this
@@ -42,7 +42,7 @@ public interface OpenApiGeneratr<T> {
      *
      * <p>
      * It is recommended to return here the last part of the full generatr name. If the generatr
-     * jar name is {@code openapi-generatr-spring} the name should be {@code Spring}.
+     * jar name is {@code openapi-generatr-spring} the name should be {@code spring}.
      * </p>
      *
      * @return the unique name of the generatr
@@ -50,17 +50,12 @@ public interface OpenApiGeneratr<T> {
     String getName();
 
     /**
-     * the type of the generatr options given to the run() method.
-     *
-     * @return options class
-     */
-    Class<T> getOptionsType();
-
-    /**
-     * Runs the generatr with the given options.
+     * Runs the generatr with the given options. The options are key value pairs. Keys are of type
+     * {@code String} and values are of any type. A property hierarchy is possible by using
+     * {@code Map}s as value.
      *
      * @param options the generatr configuration
      */
-    void run(T options);
+    void run(Map<String, ?> options);
 
 }

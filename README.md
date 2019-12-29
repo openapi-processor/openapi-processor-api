@@ -6,12 +6,10 @@ openapi-generatr consumer, for example the openapi-generatr [gradle plugin][gene
 A consumer should be able to provide access to any generatr (by the generatr name) that is found on
 the class path.
 
-For example the gradle plugin will provide a gradle task for each generatr that is available
-via this service interface. For the [openapi-generatr-spring][generatr-spring], based on the generatr
-name, this will be a `generateSpring` gradle task to run the generatr and a `generatrSpring` options
-object to configure it.
-
-
+For example the gradle plugin will provide a gradle task for each (configured) generatr. The task
+will find & run the generatr by using this service interface. By using the service interface the plugin
+itself does not need an explicit dependency on any generatr.
+ 
 # implementing the api
  
 To make an openapi-generatr available to a consumer (e.g. the openapi-generatr-gradle plugin) it must
