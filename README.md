@@ -1,29 +1,46 @@
-# openapi-generatr-api
+# openapi-processor-api
 
-This library provides the API any openapi-generatr-? should implement to make it available to an
-openapi-generatr consumer, for example the openapi-generatr [gradle plugin][generatr-gradle]. 
+This library provides a simple api for any openapi-processor-* library. By implementing this api it
+will automatically work with the openapi-processor [gradle plugin][oap-gradle]. 
 
-A consumer should be able to provide access to any generatr (by the generatr name) that is found on
-the class path.
 
-For example the gradle plugin will provide a gradle task for each (configured) generatr. The task
-will find & run the generatr by using this service interface. By using the service interface the plugin
-itself does not need an explicit dependency on any generatr.
- 
 # implementing the api
  
-To make an openapi-generatr available to a consumer (e.g. the openapi-generatr-gradle plugin) it must
-- implement the [`OpenApiGeneratr`][generatr-api] interface.
-- and provide a `META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr` property file in its
- resources with the class name of the implementing class.
+To make an openapi-processor available to the openapi-processor-gradle plugin it has to
 
-For an example see the implementation in [openapi-generatr-spring][generatr-spring]:
-- [`SpringGeneratr`][generatr-spring-api-impl], the entry point of the
-generatr.
-- and the corresponding [services property][generatr-spring-api-props] file in the resources.   
+- implement the [`OpenApiProcessor`][oap-api] interface.
 
-[generatr-gradle]: https://github.com/hauner/openapi-generatr-gradle
-[generatr-spring]: https://github.com/hauner/openapi-generatr-spring
-[generatr-spring-api-impl]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/generatr/SpringGeneratr.groovy
-[generatr-spring-api-props]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
-[generatr-api]: https://github.com/hauner/openapi-generatr-api/tree/master/src/main/java/com/github/hauner/openapi/api/OpenApiGeneratr.java
+  The gradle plugin uses the name provided by the api to configure the processor and to provide a
+  task to run it.
+
+- and provide a `META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor` property file in
+ the resources with the class name of the implementing class.
+
+# example implementations
+
+For examples see the implementations of
+ 
+*[openapi-processor-spring][oap-spring]*
+
+- [`SpringProcessor`][oap-spring-api-impl] (the entry point of the openapi-processor-spring)
+ implements the api interface
+- and the corresponding [services property][oap-spring-api-props] file in the resources.
+
+*[openapi-processor-json][oap-json]*
+
+- [`JsonProcessor`][oap-json-api-impl] (the entry point of the openapi-processor-json)
+ implements the api interface
+- and the corresponding [services property][oap-json-api-props] file in the resources.
+   
+
+[oap-api]: https://github.com/hauner/openapi-processor-api/tree/master/src/main/java/com/github/hauner/openapi/api/OpenApiGeneratr.java
+[oap-gradle]: https://github.com/hauner/openapi-generatr-gradle
+
+[oap-spring]: https://github.com/hauner/openapi-generatr-spring
+[oap-spring-api-impl]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/generatr/SpringGeneratr.groovy
+[oap-spring-api-props]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
+
+[oap-json]: https://github.com/hauner/openapi-generatr-json
+[oap-spring-api-impl]: https://github.com/hauner/openapi-generatr-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/generatr/JsonGeneratr.groovy
+[oap-spring-api-props]: https://github.com/hauner/openapi-generatr-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
+

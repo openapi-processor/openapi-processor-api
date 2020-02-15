@@ -1,12 +1,13 @@
 plugins {
     id 'java'
     id 'java-library'
-    id 'com.jfrog.bintray' version '1.8.4'
     id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.8.4'
+    id "com.github.ben-manes.versions" version "0.27.0"
 }
 
 group 'com.github.hauner.openapi'
-version '1.0.0.M3'
+version '1.0.0.M4'
 
 sourceCompatibility = 1.8
 
@@ -23,12 +24,12 @@ dependencies {
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    archiveClassifier = 'sources'
+    archiveClassifier.set ('sources')
     from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    archiveClassifier = 'javadoc'
+    archiveClassifier.set ('javadoc')
     from javadoc.destinationDir
 }
 
@@ -40,14 +41,13 @@ artifacts {
 bintray {
     user = bintrayUser
     key = bintrayKey
-    publications = ['GeneratrSpring']
+    publications = ['Processor']
 
     pkg {
-        repo = 'openapi-generatr'
-        name = 'openapi-generatr-api'
-        //userOrg = 'openapi-generatr'
+        repo = 'openapi-processor'
+        name = 'openapi-processor-api'
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/hauner/openapi-generatr-api'
+        vcsUrl = 'https://github.com/hauner/openapi-processor-api'
 
         version {
             name = project.version
@@ -57,7 +57,7 @@ bintray {
 
 publishing {
     publications {
-        GeneratrSpring (MavenPublication) {
+        Processor (MavenPublication) {
             from components.java
             artifact sourcesJar
             artifact javadocJar
