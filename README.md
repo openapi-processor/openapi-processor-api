@@ -41,6 +41,6 @@ For examples see the implementations of
 [oap-spring-api-props]: https://github.com/hauner/openapi-generatr-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
 
 [oap-json]: https://github.com/hauner/openapi-generatr-json
-[oap-spring-api-impl]: https://github.com/hauner/openapi-generatr-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/generatr/JsonGeneratr.groovy
-[oap-spring-api-props]: https://github.com/hauner/openapi-generatr-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
+[oap-json-api-impl]: https://github.com/hauner/openapi-generatr-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/generatr/JsonGeneratr.groovy
+[oap-json-api-props]: https://github.com/hauner/openapi-generatr-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiGeneratr
 
