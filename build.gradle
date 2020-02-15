@@ -41,7 +41,7 @@ artifacts {
 bintray {
     user = bintrayUser
     key = bintrayKey
-    publications = ['Processor']
+    publications = ['api']
 
     pkg {
         repo = 'openapi-processor'
@@ -57,7 +57,7 @@ bintray {
 
 publishing {
     publications {
-        Processor (MavenPublication) {
+        api (MavenPublication) {
             from components.java
             artifact sourcesJar
             artifact javadocJar
