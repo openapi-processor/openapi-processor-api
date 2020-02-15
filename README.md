@@ -1,3 +1,5 @@
+![openapi-processor-api logo](images/openapi-processor-api.png|width=50px)
+
 # openapi-processor-api
 
 This library provides a simple api for any openapi-processor-* library. By implementing this api it
