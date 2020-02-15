@@ -1,6 +1,4 @@
-<p style="text-align: center">
-  <img src="images/openapi-processor-api.png" alt="openapi-processor-api logo" width="600px">
-</p>
+![openapi-processor-api logo](images/openapi-processor-api@0.5x.png)
 
 # openapi-processor-api
 
