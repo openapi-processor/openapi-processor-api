@@ -1,4 +1,4 @@
-![openapi-processor-api logo](images/openapi-processor-api.png|width=50px)
+![openapi-processor-api logo](images/openapi-processor-api.png)
 
 # openapi-processor-api
 
