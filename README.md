@@ -1,4 +1,4 @@
-![openapi-processor-api logo](images/openapi-processor-api.png){:height="36px" width="36px"}
+<img src="images/openapi-processor-api.png" alt="openapi-processor-api logo" width="500px">
 
 # openapi-processor-api
 
