@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'com.github.hauner.openapi'
-version '1.0.0.M4'
+version '1.0.0'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
