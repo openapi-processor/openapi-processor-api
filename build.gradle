@@ -9,7 +9,10 @@ plugins {
 group 'com.github.hauner.openapi'
 version '1.0.0.M4'
 
-sourceCompatibility = 1.8
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 ext {
     bintrayUser = project.hasProperty ('BINTRAY_USER') ? BINTRAY_USER : 'n/a'
