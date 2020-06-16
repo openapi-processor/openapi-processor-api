@@ -47,7 +47,7 @@ bintray {
     publications = ['api']
 
     pkg {
-        repo = 'openapi-processor'
+        repo = 'primary'
         userOrg = 'openapi-processor'
         name = 'openapi-processor-api'
         licenses = ['Apache-2.0']
