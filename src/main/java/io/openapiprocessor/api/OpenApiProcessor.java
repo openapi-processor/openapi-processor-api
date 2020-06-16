@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.github.hauner.openapi.api;
+package io.openapiprocessor.api;
 
 import java.util.Map;
 
 /**
  * To make an openapi-processor available to a consumer (for example the openapi-processor-gradle
  * plugin) it must implement this interface and have a
- * {@code META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor} property file in the
+ * {@code META-INF/services/io.openapiprocessor.api.OpenApiProcessor} property file in the
  * resources with the class name of the implementing class.
  *
  * <p>
@@ -29,15 +29,12 @@ import java.util.Map;
  *
  * The gradle plugin uses the name provided by the api to configure the processor and to provide a
  * task to run it. This task will find and run an openapi-processor by using the
- * {@code OpenApiProcessor} service interface. By using interface it does not need an explicit
+ * {@code OpenApiProcessor} service interface. By using an interface it does not need an explicit
  * dependency on a processor.
- *
- * @deprecated use {@link io.openapiprocessor.api.OpenApiProcessor} instead.
  *
  * @author Martin Hauner
  */
-@Deprecated
-public interface OpenApiProcessor {
+public interface OpenApiProcessor extends com.github.hauner.openapi.api.OpenApiProcessor {
 
     /**
      * The identifying name of the openapi-processor. *Should* be globally unique so a consumer of
