@@ -7,7 +7,7 @@
 
 This library provides the api for an openapi-processor-* library. By implementing this api it will automatically work with the openapi-processor [gradle plugin][oap-gradle]. 
 
-# Documentation
+# openapi-processor documentation
 
 See [here][oap-docs].
 
