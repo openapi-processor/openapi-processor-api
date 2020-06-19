@@ -1,5 +1,3 @@
-[![][badge-license]][oap-license]
-
 ![openapi-processor-api logo](images/openapi-processor-api@1280x200.png)
 
 
