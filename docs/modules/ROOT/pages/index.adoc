@@ -3,13 +3,15 @@
 :page-layout: default
 :page-aliases: current@api:ROOT:index.adoc, latest@api:ROOT:index.adoc
 :badge-license: https://img.shields.io/badge/License-Apache%202.0-blue.svg?labelColor=313A42
-:badge-ci: https://github.com/hauner/openapi-processor-api/workflows/ci/badge.svg
-:oapa-ci: https://github.com/hauner/openapi-processor-api/actions?query=workflow%3Aci
-:oapa-license: https://github.com/hauner/openapi-processor-api/blob/master/LICENSE
+:badge-ci: https://github.com/openapi-processor/openapi-processor-api/workflows/ci/badge.svg
+:oapa-ci: https://github.com/openapi-processor/openapi-processor-api/actions?query=workflow%3Aci
+:oapa-license: https://github.com/openapi-processor/openapi-processor-api/blob/master/LICENSE
 //
-:oap-api: https://github.com/hauner/openapi-processor-api/blob/master/src/main/java/com/github/hauner/openapi/api/OpenApiProcessor.java
-:oap-spring-api-impl: https://github.com/hauner/openapi-processor-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/SpringProcessor.groovy
-:oap-spring-api-props: https://github.com/hauner/openapi-processor-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
+:oap-api: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/OpenApiProcessor.java
+
+:oap-spring-api-impl: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/SpringProcessor.groovy
+:oap-spring-api-props: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
+
 :oap-json-api-impl: https://github.com/hauner/openapi-processor-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/JsonProcessor.groovy
 :oap-json-api-props: https://github.com/hauner/openapi-processor-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
 
@@ -41,7 +43,7 @@ provide the task to run it.
 the gradle plugin will call `void run(Map<String, ?> options);` to run the processor, passing all
 extra settings in the options map with the property setting name as the key.
 
-- provide a `META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor` property file in
+- provide a `META-INF/services/io.openapiprocessor.api.OpenApiProcessor` property file in
  the resources with the class name of the implementing class.
 
 
