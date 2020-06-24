@@ -34,7 +34,7 @@ import java.util.Map;
  *
  * @author Martin Hauner
  */
-public interface OpenApiProcessor extends com.github.hauner.openapi.api.OpenApiProcessor {
+public interface OpenApiProcessor {
 
     /**
      * The identifying name of the openapi-processor. *Should* be globally unique so a consumer of
