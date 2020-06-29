@@ -11,8 +11,8 @@
 :oap-spring-api-impl: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/SpringProcessor.groovy
 :oap-spring-api-props: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
 
-:oap-json-api-impl: https://github.com/hauner/openapi-processor-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/JsonProcessor.groovy
-:oap-json-api-props: https://github.com/hauner/openapi-processor-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
+:oap-json-api-impl: https://github.com/openapi-processor/openapi-processor-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/JsonProcessor.groovy
+:oap-json-api-props: https://github.com/openapi-processor/openapi-processor-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
 
 
 //
