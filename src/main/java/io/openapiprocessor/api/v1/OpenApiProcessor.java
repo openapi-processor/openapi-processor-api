@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.openapiprocessor.api;
+package io.openapiprocessor.api.v1;
 
 import java.util.Map;
 
@@ -34,7 +34,7 @@ import java.util.Map;
  *
  * @author Martin Hauner
  */
-public interface OpenApiProcessorV1 {
+public interface OpenApiProcessor {
 
     /**
      * The identifying name of the openapi-processor. *Should* be globally unique so a consumer of
