@@ -32,12 +32,9 @@ import java.util.Map;
  * {@code OpenApiProcessor} service interface. By using an interface it does not need an explicit
  * dependency on a processor.
  *
- *  @deprecated use {@link io.openapiprocessor.api.OpenApiProcessorV1} instead.
- *
  * @author Martin Hauner
  */
-@Deprecated
-public interface OpenApiProcessor extends com.github.hauner.openapi.api.OpenApiProcessor {
+public interface OpenApiProcessorV1 {
 
     /**
      * The identifying name of the openapi-processor. *Should* be globally unique so a consumer of
