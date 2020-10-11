@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * To make an openapi-processor available to a consumer (for example the openapi-processor-gradle
  * plugin) it must implement this interface and have a
- * {@code META-INF/services/io.openapiprocessor.api.OpenApiProcessor} property file in the
+ * {@code META-INF/services/io.openapiprocessor.api.v1.OpenApiProcessor} property file in the
  * resources with the class name of the implementing class.
  *
  * <p>
