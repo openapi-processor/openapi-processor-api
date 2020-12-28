@@ -6,7 +6,7 @@
 package io.openapiprocessor.api.v1;
 
 /**
- * (experimental & optional) interface to provide version information of the processor.
+ * (experimental &amp; optional) interface to provide version information of the processor.
  */
 public interface Version {
 
