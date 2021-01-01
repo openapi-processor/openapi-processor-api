@@ -26,13 +26,12 @@ link:{oapa-license}[image:{badge-license}[]]
 
 
 This library provides a simple api for an openapi-processor-* library. By implementing this api
-it will automatically work with the openapi-processor xref:gradle::index.adoc[gradle plugin].
-
+it will automatically work with the openapi-processor xref:gradle::index.adoc[gradle plugin] or the xref:maven::index.adoc[maven plugin].
 
 == implementing the api
 
 To make an openapi-processor available to the
-xref:gradle::index.adoc[openapi-processor-gradle plugin] it has to
+xref:gradle::index.adoc[openapi-processor-gradle plugin] or or the xref:maven::index.adoc[openapi-processor-maven plugin] it has to
 
 - implement the link:{oap:api}[`OpenApiProcessor`] interface.
 +
