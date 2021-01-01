@@ -35,14 +35,11 @@ xref:gradle::index.adoc[openapi-processor-gradle plugin] or or the xref:maven::i
 
 - implement the link:{oap:api}[`OpenApiProcessor`] interface.
 +
-the gradle plugin uses the name provided by `String getName();` to configure the processor and to
-provide the task to run it.
+the plugins use the name provided by `String getName();` to configure the processor and to provide the task to run it.
 +
-the gradle plugin will call `void run(Map<String, ?> options);` to run the processor, passing all
-extra settings in the options map with the property setting name as the key.
+the plugins will call `void run(Map<String, ?> options);` to run the processor, passing all extra settings in the options map with the property setting name as the key.
 
-- provide a `META-INF/services/io.openapiprocessor.api.OpenApiProcessor` property file in
- the resources with the class name of the implementing class.
+- provide a `META-INF/services/io.openapiprocessor.api.OpenApiProcessor` property file in the resources with the class name of the implementing class.
 
 
 == example implementations
