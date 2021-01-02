@@ -6,7 +6,7 @@
 :oapa-ci: https://github.com/openapi-processor/openapi-processor-api/actions?query=workflow%3Aci
 :oapa-license: https://github.com/openapi-processor/openapi-processor-api/blob/master/LICENSE
 //
-:oap-api: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/OpenApiProcessor.java
+:oap-api: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
 
 :oap-spring-api-impl: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/SpringProcessor.groovy
 :oap-spring-api-props: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
@@ -33,7 +33,7 @@ it will automatically work with the openapi-processor xref:gradle::index.adoc[gr
 To make an openapi-processor available to the
 xref:gradle::index.adoc[openapi-processor-gradle plugin] or or the xref:maven::index.adoc[openapi-processor-maven plugin] it has to
 
-- implement the link:{oap:api}[`OpenApiProcessor`] interface.
+- implement the link:{oap:api}[`v1.OpenApiProcessor`] interface.
 +
 the plugins use the name provided by `String getName();` to configure the processor and to provide the task to run it.
 +
@@ -43,6 +43,8 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 
 
 == example implementations
+
+NOTE: the examples follow the above instructions but use the original interface with a different package name.
 
 For examples see the implementations of
 
