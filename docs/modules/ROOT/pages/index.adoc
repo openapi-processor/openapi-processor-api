@@ -56,7 +56,7 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 | no
 a| unchanged
 
-| 2020.3 (1.3.0)
+|
 | `io.openapiprocessor.api.v1.Version`
 | no
 | no
