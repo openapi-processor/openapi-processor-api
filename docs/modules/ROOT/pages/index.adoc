@@ -18,7 +18,7 @@
 //
 // content
 //
-image:openapi-processor-api$$@$$1280x200.png[openapi-processor-json]
+image:openapi-processor-api$$@$$1280x200.png[openapi-processor-api]
 
 // badges
 //todo link:{oapa-ci}[image:{badge-ci}[]]
