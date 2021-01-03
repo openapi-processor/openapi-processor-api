@@ -3,7 +3,7 @@
 
 # openapi-processor-api
 
-This library provides the api for an openapi-processor-* library. By implementing this api it will automatically work with the openapi-processor [gradle plugin][oap-gradle]. 
+This library provides the api for an openapi-processor-* library. By implementing this api it will automatically work with the openapi-processor [gradle plugin][oap-gradle] and [maven plugin][oap-maven]. 
 
 # documentation
 
@@ -11,6 +11,7 @@ See [here][oap-docs].
 
 [oap-docs]: https://docs.openapiprocessor.io/api/latest
 [oap-gradle]: https://docs.openapiprocessor.io/gradle
+[oap-maven]: https://docs.openapiprocessor.io/maven
 
 [oap-license]: https://github.com/openapi-processor/openapi-processor-api/blob/master/LICENSE
 
