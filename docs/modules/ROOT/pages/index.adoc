@@ -45,7 +45,7 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 [cols="5*",options="header"]
 |===
 | api version
-| package name
+| interface
 | gradle plugin
 | maven plugin
 | description
