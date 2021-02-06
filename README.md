@@ -9,7 +9,7 @@ This library provides the api for an openapi-processor-* library. By implementin
 
 See [here][oap-docs].
 
-[oap-docs]: https://docs.openapiprocessor.io/api/latest
+[oap-docs]: https://docs.openapiprocessor.io/api
 [oap-gradle]: https://docs.openapiprocessor.io/gradle
 [oap-maven]: https://docs.openapiprocessor.io/maven
 
