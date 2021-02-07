@@ -1,7 +1,7 @@
 plugins {
-    id 'java'
     id 'java-library'
     id 'maven-publish'
+    id 'signing'
     id "com.github.ben-manes.versions" version "0.36.0"
 }
 
@@ -18,8 +18,10 @@ javadoc {
 }
 
 ext {
-    bintrayUser = project.hasProperty ('BINTRAY_USER') ? BINTRAY_USER : 'n/a'
-    bintrayKey =  project.hasProperty ('BINTRAY_KEY')  ? BINTRAY_KEY  : 'n/a'
+    publishUser = project.findProperty ('PUBLISH_USER') ?: System.getenv ("PUBLISH_USER") ?: 'n/a'
+    publishKey =  project.findProperty ('PUBLISH_KEY') ?: System.getenv ("PUBLISH_KEY") ?: 'n/a'
+
+    isReleaseVersion = !version.endsWith("SNAPSHOT")
 }
 
 repositories {
