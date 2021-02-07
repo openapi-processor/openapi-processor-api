@@ -46,21 +46,21 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 |===
 | api version
 | interface
-| gradle plugin
-| maven plugin
+| supported by gradle plugin
+| supported by maven plugin
 | description
+
+| 2021.1
+| `io.openapiprocessor.api.v1.OpenApiProcessor`
+| since 2021.1
+| no (all processors still use the 1.0.0 API)
+a| no API changes
 
 | 2020.3 (1.3.0)
 | `io.openapiprocessor.api.v1.OpenApiProcessor`
 | yes
 | no
-a| unchanged
-
-|
-| `io.openapiprocessor.api.v1.Version`
-| no
-| no
-a| *experimental* to query a processor version
+a| no API changes
 
 | 1.2.0
 | `io.openapiprocessor.api.v1.OpenApiProcessor`
