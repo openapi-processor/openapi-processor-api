@@ -1,5 +1,6 @@
-![openapi-processor-api logo](images/openapi-processor-api@1280x200.png)
+![Maven Central](https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api)
 
+![openapi-processor-api logo](images/openapi-processor-api@1280x200.png)
 
 # openapi-processor-api
 
