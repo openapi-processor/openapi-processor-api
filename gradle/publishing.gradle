@@ -57,9 +57,9 @@ publishing {
     }
 }
 
-tasks.withType(Sign) {
-    onlyIf { project.isReleaseVersion }
-}
+//tasks.withType(Sign) {
+//    onlyIf { project.isReleaseVersion }
+//}
 
 signing {
     useInMemoryPgpKeys(signKey, signPwd)
