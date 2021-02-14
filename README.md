@@ -11,7 +11,7 @@ This library provides the api for an openapi-processor-* library. By implementin
 See [here][oap-docs].
 
 [oap-central]: https://search.maven.org/search?q=io.openapiprocessor
-[badge-central]: https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api?label=maven-central
+[badge-central]: https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api?label=Maven%20Central
 
 [oap-docs]: https://docs.openapiprocessor.io/api
 [oap-gradle]: https://docs.openapiprocessor.io/gradle

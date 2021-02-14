@@ -6,7 +6,7 @@
 :oapa-license: https://github.com/openapi-processor/openapi-processor-api/blob/master/LICENSE
 :oapa-github: https://github.com/openapi-processor/openapi-processor-api
 :oap-central: https://search.maven.org/search?q=io.openapiprocessor
-:badge-central: https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api?label=maven-central
+:badge-central: https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api?label=Maven%20Central
 //
 :oap-api: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
 
