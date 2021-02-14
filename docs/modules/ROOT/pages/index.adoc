@@ -4,6 +4,9 @@
 :badge-ci: https://github.com/openapi-processor/openapi-processor-api/workflows/ci/badge.svg
 :oapa-ci: https://github.com/openapi-processor/openapi-processor-api/actions?query=workflow%3Aci
 :oapa-license: https://github.com/openapi-processor/openapi-processor-api/blob/master/LICENSE
+:oapa-github: https://github.com/openapi-processor/openapi-processor-api
+:oap-central: https://search.maven.org/search?q=io.openapiprocessor
+:badge-central: https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api?label=maven-central
 //
 :oap-api: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
 
@@ -22,6 +25,7 @@ image:openapi-processor-api$$@$$1280x200.png[openapi-processor-api]
 // badges
 //todo link:{oapa-ci}[image:{badge-ci}[]]
 link:{oapa-license}[image:{badge-license}[]]
+link:{oap-central}[image:{badge-central}[]]
 
 
 This library provides a simple api for an openapi-processor-* library. By implementing this api
