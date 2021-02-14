@@ -62,10 +62,7 @@ tasks.withType(Sign) {
 }
 
 signing {
-    String signingKey = project.findProperty ('SIGN_KEY') ?: System.getenv ("SIGN_KEY") ?: 'n/a'
-    String signingPwd = project.findProperty ('SIGN_PWD') ?: System.getenv ("SIGN_PWD") ?: 'n/a'
-
-    useInMemoryPgpKeys(signingKey, signingPwd)
+    useInMemoryPgpKeys(signKey, signPwd)
 
     signing {
         sign publishing.publications.OpenApiProcessor

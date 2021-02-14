@@ -17,9 +17,21 @@ javadoc {
     options.encoding = 'UTF-8'
 }
 
+String getBuildProperty(String property) {
+    project.findProperty (property) ?: System.getenv (property) ?: 'n/a'
+}
+
+String getBuildSignKey(String property) {
+    project.findProperty (property) ?:
+        System.getenv (property) ? System.getenv (property).replace("\\n", "\n"): 'n/a'
+}
+
 ext {
-    publishUser = project.findProperty ('PUBLISH_USER') ?: System.getenv ("PUBLISH_USER") ?: 'n/a'
-    publishKey =  project.findProperty ('PUBLISH_KEY') ?: System.getenv ("PUBLISH_KEY") ?: 'n/a'
+    publishUser = getBuildProperty ('PUBLISH_USER')
+    publishKey =  getBuildProperty ('PUBLISH_KEY')
+
+    signKey = getBuildSignKey ('SIGN_KEY')
+    signPwd = getBuildProperty ('SIGN_PWD')
 
     isReleaseVersion = !version.endsWith("SNAPSHOT")
 }
