@@ -5,10 +5,14 @@
 
 package io.openapiprocessor.api.v2;
 
+/**
+ * Interface to provide (optional) version information of a processor. This must be implemented by
+ * the same class that implements {@link OpenApiProcessor}.
+ */
 public interface OpenApiProcessorVersion {
 
     /**
-     * The version of this openapi-processor.
+     * The version of this openapi-processor. E.g. 2023.1
      *
      * @return the version of this processor
      */
