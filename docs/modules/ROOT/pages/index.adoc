@@ -99,8 +99,6 @@ a| new package name
 
 == example implementations
 
-NOTE: the examples follow the above instructions but use the original interface with a different package name.
-
 For examples see the implementations of
 
 *xref:spring::index.adoc[openapi-processor-spring]*
