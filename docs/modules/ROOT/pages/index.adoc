@@ -8,14 +8,13 @@
 :oap-central: https://search.maven.org/search?q=io.openapiprocessor
 :badge-central: https://img.shields.io/maven-central/v/io.openapiprocessor/openapi-processor-api?label=Maven%20Central
 //
-:oap-api: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
+:processor-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessor.java
+:version-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessorVersion.java
 
-:oap-spring-api-impl: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/SpringProcessor.groovy
-:oap-spring-api-props: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
+:processor-v1: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
 
-:oap-json-api-impl: https://github.com/openapi-processor/openapi-processor-json/blob/master/src/main/groovy/com/github/hauner/openapi/spring/processor/JsonProcessor.groovy
-:oap-json-api-props: https://github.com/openapi-processor/openapi-processor-json/blob/master/src/main/resources/META-INF/services/com.github.hauner.openapi.api.OpenApiProcessor
-
+:oap-spring-api-impl: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/kotlin/io/openapiprocessor/spring/processor/SpringService.kt
+:oap-spring-api-props: https://github.com/openapi-processor/openapi-processor-spring/tree/master/src/main/resources/META-INF/services
 
 //
 // content
@@ -34,57 +33,67 @@ it will automatically work with the openapi-processor xref:gradle::index.adoc[gr
 == implementing the api
 
 To make an openapi-processor available to the
-xref:gradle::index.adoc[openapi-processor-gradle plugin] or or the xref:maven::index.adoc[openapi-processor-maven plugin] it has to
+xref:gradle::index.adoc[openapi-processor-gradle plugin] or the xref:maven::index.adoc[openapi-processor-maven plugin] it has to
 
-- implement the link:{oap:api}[`v1.OpenApiProcessor`] interface.
+- implement the link:{processor-v2}[`v2.OpenApiProcessor`] interface
++
+recommended is to implement link:{processor-v1}[`v1.OpenApiProcessor`] to be compatible with previous versions of the gradle/maven plugin (it has the same methods, so it is just a matter of adding the interface).
 +
 the plugins use the name provided by `String getName();` to configure the processor and to provide the task to run it.
 +
 the plugins will call `void run(Map<String, ?> options);` to run the processor, passing all extra settings in the options map with the property setting name as the key.
 
-- provide a `META-INF/services/io.openapiprocessor.api.OpenApiProcessor` property file in the resources with the class name of the implementing class.
+- provide a `META-INF/services/<package>.OpenApiProcessor` property file in the resources with the class name of the implementing class for all implemented interfaces (i.e. v2, v1).
+
+- implement the link:{version-v2}[`v2.OpenApiProcessorVersion`] interface if you want to support the latest release check.
 
 == api evolution
 
 [cols="5*",options="header"]
 |===
 | api version
-| interface
+| interface (`io.openapiprocessor.api`..)
 | supported by gradle plugin
 | supported by maven plugin
 | description
 
+| 2023.1
+| `..v2.OpenApiProcessor`, `..v2.OpenApiProcessorVersion`
+| since 2023.2
+| todo
+a| no API changes, added new `Version` api
+
 | 2021.1
-| `io.openapiprocessor.api.v1.OpenApiProcessor`
+| `..v1.OpenApiProcessor`
 | since 2021.1
-| no (all processors still use the 1.0.0 API)
+| yes
 a| no API changes
 
 | 2020.3 (1.3.0)
-| `io.openapiprocessor.api.v1.OpenApiProcessor`
+| `..v1.OpenApiProcessor`
 | yes
-| no
+| yes
 a| no API changes
 
 | 1.2.0
-| `io.openapiprocessor.api.v1.OpenApiProcessor`
+| `..v1.OpenApiProcessor`
 | yes
-| no
+| yes
 a| better package name, no other changes
 
 | 1.1.0
-| `io.openapiprocessor.api.OpenApiProcessor`
+| `..OpenApiProcessor`
 | yes
-| no
+| yes
 a| new package name
-
-//4+| &darr; old (deprecated)
-
-| 1.0.0
-| `com.github.hauner.openapi.api.OpenApiProcessor`
-| yes
-| yes
-a| old package name, still used by all processors
+//
+// 5+| &darr; old (deprecated)
+//
+// | 1.0.0
+// | `com.github.hauner.openapi.api.OpenApiProcessor`
+// | yes
+// | yes
+// a| original package name, still supported by all processors
 
 |===
 
@@ -96,12 +105,6 @@ For examples see the implementations of
 
 *xref:spring::index.adoc[openapi-processor-spring]*
 
-- link:{oap-spring-api-impl}[`SpringProcessor`] (the entry point of the openapi-processor-spring)
- implements the api interface
-- and the corresponding link:{oap-spring-api-props}[services property] file in the resources.
-
-*xref:json::index.adoc[openapi-processor-json]*
-
-- link:{oap-json-api-impl}[`JsonProcessor`] (the entry point of the openapi-processor-json)
- implements the api interface
-- and the corresponding link:{oap-json-api-props}[services property] file in the resources.
+- link:{oap-spring-api-impl}[`SpringService`] (the entry point of the openapi-processor-spring)
+ implements the api interfaces.
+- and the corresponding link:{oap-spring-api-props}[services property] files in the resources.
