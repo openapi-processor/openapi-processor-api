@@ -10,11 +10,14 @@
 //
 :processor-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessor.java
 :version-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessorVersion.java
+:test-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessorTest.java
 
 :processor-v1: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
 
 :oap-spring-api-impl: https://github.com/openapi-processor/openapi-processor-spring/blob/master/src/main/kotlin/io/openapiprocessor/spring/processor/SpringService.kt
 :oap-spring-api-props: https://github.com/openapi-processor/openapi-processor-spring/tree/master/src/main/resources/META-INF/services
+
+:oap-test: https://github.com/openapi-processor/openapi-processor-base/tree/main/openapi-processor-test
 
 //
 // content
@@ -47,6 +50,8 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 
 - implement the link:{version-v2}[`v2.OpenApiProcessorVersion`] interface if you want to support the latest release check.
 
+- implement the link:{test-v2}[`v2.OpenApiProcessorTest`] interface to run integration to with link:{oap-test}[`openapi-processor-test`] (required since 2024.6).
+
 == api evolution
 
 [cols="5*",options="header"]
@@ -57,10 +62,16 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 | supported by maven plugin
 | description
 
+| 2024.1
+| `..v2.OpenApiProcessor`, `..v2.OpenApiProcessorVersion`, `..v2.OpenApiProcessorTest`
+| since 2023.2
+|
+a|  no API changes, added new `Test` api
+
 | 2023.1
 | `..v2.OpenApiProcessor`, `..v2.OpenApiProcessorVersion`
 | since 2023.2
-| todo
+|
 a| no API changes, added new `Version` api
 
 | 2021.1
