@@ -1,5 +1,5 @@
 name: api
 title: oap-api
-version: master
+version: 2024.1
 nav:
 - modules/ROOT/nav.adoc
