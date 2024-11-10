@@ -9,7 +9,10 @@ package io.openapiprocessor.api.v2;
  * (integration) test support.
  * provides the destination folders in the targetDir depending on the targetDir layout. This
  * information is available only <b>after</b> running the processor.
+ *
+ * deprecated, moved to openapi-processor-test-api
  */
+@Deprecated
 public interface OpenApiProcessorTest {
     /**
      * provides the target source root folder in targetDir.
