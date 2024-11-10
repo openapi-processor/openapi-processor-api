@@ -10,7 +10,7 @@
 //
 :processor-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessor.java
 :version-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessorVersion.java
-:test-v2: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v2/OpenApiProcessorTest.java
+:test-v2: https://github.com/openapi-processor/openapi-processor-base/blob/main/openapi-processor-test-api/src/main/java/io/openapiprocessor/test/api/OpenApiProcessorTest.java
 
 :processor-v1: https://github.com/openapi-processor/openapi-processor-api/blob/master/src/main/java/io/openapiprocessor/api/v1/OpenApiProcessor.java
 
@@ -61,6 +61,12 @@ the plugins will call `void run(Map<String, ?> options);` to run the processor, 
 | supported by gradle plugin
 | supported by maven plugin
 | description
+
+| 2024.2
+| `..v2.OpenApiProcessor`, `..v2.OpenApiProcessorVersion`
+| since 2023.2
+|
+a|  no API changes, extracted `Test` api
 
 | 2024.1
 | `..v2.OpenApiProcessor`, `..v2.OpenApiProcessorVersion`, `..v2.OpenApiProcessorTest`
